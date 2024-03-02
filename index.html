@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text To Speech Converter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            background-color: #c0e2ff;
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        h1 {
+            text-transform: uppercase;
+            margin: 22px 0;
+        }
+
+        button {
+            font-family: arial;
+            font-weight: bold;
+            color: #14396A !important;
+            font-size: 16px;
+            text-shadow: 5px 4px 7px #7CACDE;
+            box-shadow: 3px 3px 3px #BEE2F9;
+            padding: 8px 16px;
+            border-radius: 10px;
+            border: 2px solid #3866A3;
+            background: #8FDBEE;
+            cursor: pointer;
+        }
+
+        button:hover {
+            color: #14396A !important;
+            background: #FFFFFF;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Text To Speech Converter</h1>
+    <textarea name="textarea" id="textbox" cols="60" rows="8"></textarea><br>
+    <button id="speakbtn" onclick="speak()">Converter</button>
+
+    <script>
+        function speak() {
+            let synth = window.speechSynthesis;
+            let message = new SpeechSynthesisUtterance(`${textbox.value}`);
+            synth.speak(message);
+        }
+    </script>
+</body>
+
+</html>
